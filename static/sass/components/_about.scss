@@ -1,0 +1,15 @@
+.c-about {
+  background-color: $secondary-color;
+  color: $primary-color;
+  text-align: center;
+  padding: 16px;
+
+  p {
+    font-size: 24px;
+    color: $primary-color;
+  }
+}
+
+.about__inner {
+  padding: 100px 0px;
+}

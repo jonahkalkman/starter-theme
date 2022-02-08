@@ -1,0 +1,15 @@
+@import "variables/main.scss";
+@import "mixins/main.scss";
+@import "grid";
+@import "visibility"; // Visibility last for precedence
+
+
+@import "general";
+@import "components/menu";
+@import "components/header";
+@import "components/hero";
+@import "components/link";
+@import "components/title";
+@import "components/about";
+
+

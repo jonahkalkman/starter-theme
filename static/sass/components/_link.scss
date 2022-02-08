@@ -1,0 +1,25 @@
+.c-link { 
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  font-family: $primary-font;
+  text-transform: uppercase;
+
+  &::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    display: block;
+    bottom: -2px;
+    background-color: $secondary-color;
+  }
+
+  &--secondary {
+    color: $active-color;
+
+    &::after {
+      background-color: $active-color;
+    }
+  }
+}

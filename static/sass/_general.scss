@@ -1,0 +1,53 @@
+@font-face {
+  font-family: $primary-font;
+  src: url("../fonts/CroissantOne-Regular.woff2") format("woff2"),
+       url("../fonts/CroissantOne-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: $secondary-font;
+  src: url("../fonts/FiraSansCondensed-Regular.woff2") format("woff2"),
+       url("../fonts/FiraSansCondensed-Regular.woff") format("woff");
+}
+
+body {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: $primary-font;
+  margin: 0px;
+}
+
+p, a {
+  font-size: 16px;
+  line-height: 150%;
+  color: $secondary-color;
+  font-family: $secondary-font;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+li {
+  font-size: 16px;
+  line-height: 150%;
+  color: $secondary-color;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h1,h2,h3 {
+  text-transform: uppercase;
+  margin: 0;
+}
