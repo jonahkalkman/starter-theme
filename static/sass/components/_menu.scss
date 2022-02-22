@@ -11,7 +11,84 @@
 }
 
 .nav__item a {
+  position: relative;
   font-size: 18px;
   font-family: $primary-font;
   text-transform: uppercase;
+  color: $secondary-color;
+  transition: all 0.5s ease-in-out;
+
+  &::after {
+    content: '';
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    display: block;
+    bottom: -2px;
+    background-color: $secondary-color;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover {
+    color: rgba(65,65,140, 0.5);
+
+    &::after {
+      content: '';
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      display: block;
+      bottom: -2px;
+      background-color: rgba(65,65,140, 0.5);
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}
+
+.mobile-menu__wrapper {
+  display: none;
+  position: absolute;
+  background-color: $primary-color;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+
+
+  &--active {
+    display: block;
+  }
+
+  .mobile-menu-close {
+    position: absolute;
+    right: 16px;
+    color: $active-color;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    height: fit-content;
+    &::after {
+      background-color: $active-color;
+    }
+  }
+}
+
+.mobile-menu__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  margin-top: 80px;
+
+  .menu-item {
+    margin-bottom: 20px;
+  }
+
+  .menu-item a {
+    font-size: 35px;
+  }
 }

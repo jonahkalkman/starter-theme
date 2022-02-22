@@ -5,23 +5,35 @@
 	{% endblock %}
 	</head>
 {% endblock %}
-
 	<body class="{{body_class}}" data-template="base.twig">
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="c-header row">
-			{% block header %}
-        <img class="header__image col-xs-2" src="{{ site.theme.link }}/static/images/logo.svg">
-        <nav id="nav-main" class="c-nav col-xs-10" role="navigation">
-          {% include "menu.twig" with {'items': menu.get_items} %}
-        </nav>
-			{% endblock %}
+    <div class="mobile-menu__wrapper">
+      <div class="row" style="position: relative;"> 
+        <img class="header__image-mobile hide-sm" src="{{site.theme.link }}/static/images/logo-mobile.svg">
+        <span class="c-link mobile-menu-close">Close</span>
+      </div>
+      {% if menu %}
+        <ul class="mobile-menu__list">
+          {% for item in menu.get_items %}
+            <li class="{{ item.classes | join(' ') }} nav__item">
+              <a target="{{ item.target }}" href="{{ item.link }}" class="mobile-menu__link">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+		<header class="c-header container fade-in">
+      <div class="row"> 
+        {% block header %}
+          <img class="header__image-mobile hide-sm" src="{{site.theme.link }}/static/images/logo-mobile.svg">
+          <span class="c-link hide-sm header__menu-mobile">Menu</span>
+          <img class="header__image col-xs-3 hide-xs-only" src="{{ site.theme.link }}/static/images/logo.svg">
+          <nav id="nav-main" class="c-nav col-xs-9 hide-xs-only" role="navigation">
+            {% include "menu.twig" with {'items': menu.get_items} %}
+          </nav>
+        {% endblock %}
+      </div>
 		</header>
-    
-    {% include "partial/hero.twig" %}
-
-    {% include "partial/about.twig" %}
-
-
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper {{sidebar_class}}">
@@ -37,10 +49,11 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
+			<footer id="footer" class="container">
 				{% include 'footer.twig' %}
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}
 	</body>
+  <script type="text/javascript" src="{{ site.theme.link }}/dist/main.js"></script>
 </html>

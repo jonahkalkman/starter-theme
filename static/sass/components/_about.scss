@@ -3,13 +3,35 @@
   color: $primary-color;
   text-align: center;
   padding: 16px;
-
   p {
     font-size: 24px;
     color: $primary-color;
+
+    @media (max-width: 50rem) {
+      font-size: 16px;
+    }
   }
 }
 
 .about__inner {
+  border: 10px solid transparent;
   padding: 100px 0px;
+
+  @media (max-width: 50rem) {
+    padding: 20px 0px;
+  }
+}
+
+.about__title {
+  margin-bottom: 11px;
+
+  @media (max-width: 50rem) {
+    font-size: 30px;
+  }
+}
+
+.about__description {
+  @media (max-width: 50rem) {
+    padding: 0px 16px;
+  }
 }

@@ -1,10 +1,18 @@
-<section class="c-hero row">
-  <div class="hero__content col-xs-6">
-    <h1 class="c-title">Wij helpen jouw event te verwonderen<span class="title__icon"><img src="{{ site.theme.link }}/static/images/sparkle.svg"></span></h1>
-    <a class="c-link content__link">Contact opnemen</a>
-    <a class="c-link c-link--secondary">Bekijk onze werkwijze</a>
+<section class="c-hero container fade-in">
+  <div class="row middle-xs"> 
+    <div class="hero__content col-xs-12 col-sm-7">
+      <h1 class="content__title c-title fade-in">{{ post.hero_title }}<span class="title__icon"><img src="{{ site.theme.link }}/static/images/sparkle.svg"></span></h1>
+      <a class="c-link content__link fade-in" href="{{ post.link_one.url }}">{{ post.link_one.text }}</a>
+      <a class="c-link c-link--secondary fade-in" href="{{ post.link_two.url }}">{{ post.link_two.text }}</a>
+    </div>
+    <div class="col-xs-12 col-sm-5 hide-xs-only" style="text-align: right;"> 
+      <img class="hero__image fade-in" src="{{ hero_img }}">
+    </div>
   </div>
-  <div class="col-xs-6"> 
-    <img class="hero__image" src="{{ site.link }}/wp-content/uploads/2022/02/hero-image.png">
-  </div>
+  <a class="hero__scroll fade-in" href="#about">
+    <svg width="29" height="45" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="27" height="43" rx="13.5" stroke="#41418C" stroke-width="2"/>
+      <rect class="scroll__mouse" x="11" y="7" width="6" height="10" rx="3" fill="#41418C"/>
+    </svg>
+  </a>
 </section>

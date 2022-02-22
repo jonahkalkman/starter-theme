@@ -1,0 +1,13 @@
+<section id="contact" class="c-contact" style="cursor: url('{{ site.theme.link }}/static/images/cursor.png') 25 25, auto;">
+  <div class="contact__inner" style="border-image: url({{ site.theme.link }}/static/images/border.png) 30 / 30px round;"> 
+    <div class="row center-xs">
+      <h2 class="col-xs-12 c-title fade-in">{{ post.contact_title }}<span class="title__icon"><img src="{{ site.theme.link }}/static/images/sparkle-sand.svg"></span></h2>
+      <p class="fade-in">{{ post.contact_description }}</p>
+    </div>
+    <div class="row center-xs">
+     <div class="contact__form fade-in">
+        {{ function('do_shortcode', '[contact-form-7 id="15" title="Contact"]') }}
+      </div>
+    </div>
+  </div>
+</section

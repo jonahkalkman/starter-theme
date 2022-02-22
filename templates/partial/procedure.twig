@@ -1,3 +1,69 @@
-<section class="c-procedure">
-  <h2></h2>
+<section id="procedure" class="c-procedure">
+  <div class="container">
+    <div class="row center-xs middle-xs">
+      <h2 class="col-xs-12 procedure__title c-title fade-in">{{ post.procedure_titlee }}<span class="title__icon"><img src="{{ site.theme.link }}/static/images/sparkle.svg"></span></h2>
+    </div>
+    {% set count = 0 %}
+    {% for item in procedure_items %}
+      {% set count = count + 1 %}
+      {% if (count is odd) %}
+        <div class="row center-xs middle-xs procedure__wrapper fade-in">
+          <div class="col-xs-12 col-sm-6">
+            <div class="procedure__item"> 
+              <h3 class="item__title">{{ item.item_title }}</h3>
+              <p>{{ item.procedure_description }}</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <img class="procedure__image" src="{{ item.procedure_image }}" />
+          </div>
+        </div>
+      {% else %}
+        <div class="row center-xs middle-xs procedure__wrapper">
+          <div class="col-xs-12 col-sm-6 last-xs first-sm">
+            <img class="procedure__image" src="{{ item.procedure_image }}" />
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="procedure__item procedure__item--blue"> 
+              <h3 class="item__title">{{ item.item_title }}</h3>
+              <p>{{ item.procedure_description }}</p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    {# <div class="row center-xs middle-xs">
+      <div class="col-xs-6">
+        <div class="procedure__item"> 
+          <h3 class="item__title">Organiseren</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A amet sapien tristique sed. Eu sapien, metus arcu, mattis suscipit. Vel diam tellus dignissim in nulla. Placerat amet amet cursus leo viverra odio. Ut viverra ut tincidunt ornare suspendisse mattis mattis montes. Cursus turpis volutpat nulla vitae.</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <img class="procedure__image" src="https://images.unsplash.com/photo-1442407144300-e48b9dfe446b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
+      </div>
+    </div>
+    <div class="row center-xs middle-xs">
+      <div class="col-xs-6">
+        <img class="procedure__image" src="https://images.unsplash.com/photo-1442407144300-e48b9dfe446b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
+      </div>
+      <div class="col-xs-6">
+        <div class="procedure__item procedure__item--blue"> 
+          <h3 class="item__title">Complete plaatje</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A amet sapien tristique sed. Eu sapien, metus arcu, mattis suscipit. Vel diam tellus dignissim in nulla. Placerat amet amet cursus leo viverra odio. Ut viverra ut tincidunt ornare suspendisse mattis mattis montes. Cursus turpis volutpat nulla vitae.</p>
+        </div>
+      </div>
+    </div>
+     <div class="row center-xs middle-xs">
+      <div class="col-xs-6">
+        <div class="procedure__item"> 
+          <h3 class="item__title">Organiseren</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A amet sapien tristique sed. Eu sapien, metus arcu, mattis suscipit. Vel diam tellus dignissim in nulla. Placerat amet amet cursus leo viverra odio. Ut viverra ut tincidunt ornare suspendisse mattis mattis montes. Cursus turpis volutpat nulla vitae.</p>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <img class="procedure__image" src="https://images.unsplash.com/photo-1442407144300-e48b9dfe446b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
+      </div>
+    </div> #}
+  </div>
 </section>

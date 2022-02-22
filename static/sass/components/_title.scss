@@ -1,4 +1,15 @@
+
+
+.title__icon {
+  position: absolute;
+}
+
 .title__icon img {
   vertical-align: top;
   transform: translateY(-5px);
+
+  @media (max-width: 50rem) {
+    height: 25px;
+    transform: translateY(-6px);
+  }
 }

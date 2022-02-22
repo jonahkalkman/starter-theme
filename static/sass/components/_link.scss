@@ -1,9 +1,11 @@
 .c-link { 
   position: relative;
   display: inline-block;
-  font-size: 18px;
+  font-size: 18px; 
   font-family: $primary-font;
   text-transform: uppercase;
+  color: $secondary-color;
+  transition: color 0.4s ease-in-out;
 
   &::after {
     content: '';
@@ -13,6 +15,16 @@
     display: block;
     bottom: -2px;
     background-color: $secondary-color;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover {
+    color: rgba(65,65,140, 0.5);
+
+    &::after {
+      width: 0%;
+      background-color: rgba(65,65,140, 0.5);
+    }
   }
 
   &--secondary {
@@ -20,6 +32,15 @@
 
     &::after {
       background-color: $active-color;
+    }
+
+    &:hover {
+      // cursor: pointer;
+      color: rgba(235,155,100, 0.6);
+  
+      &::after {
+        background-color: rgba(235,155,100, 0.6);
+      }
     }
   }
 }
