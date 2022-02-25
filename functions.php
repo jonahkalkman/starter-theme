@@ -90,6 +90,7 @@ class StarterSite extends Timber\Site {
     $context['footernavigation']  = new Timber\Menu('footer-navigatie');
     $context['hero_img'] = $cfs->get('hero_image');
     $context['procedure_items'] = $cfs->get('procedure_items');
+    $context['project_items'] = $cfs->get('project_items');
 		$context['site']  = $this;
 		return $context;
 	}

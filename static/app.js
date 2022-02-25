@@ -26,7 +26,6 @@ const Menu = () => {
 Menu();
 
 const fadeIn = () => {
-  // const img = document.querySelector("img")
   const fadeElements = document.querySelectorAll('.fade-in');
 
   const callback = (entries, observer) => {
@@ -46,3 +45,16 @@ const fadeIn = () => {
   })
 }
 fadeIn();
+
+
+const projects = () => {
+  const projectButtons = document.querySelectorAll('.projects__open-button');
+  projectButtons.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.add('active');
+      item.parentElement.classList.add('active')
+    })
+  })
+}
+
+projects(); 
