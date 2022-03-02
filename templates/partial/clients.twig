@@ -1,0 +1,13 @@
+{% if post.client_active == true %}
+  <section id="clients" class="c-clients container">
+    <div class="row center-xs fade-in">
+      {% for item in client_items %}
+        <div class="col-xs-4 center-xs" style="text-align:center;">
+          <a href="{{ item.client_item_link.url }}" target="_blank">
+            <img class="clients__item-image" src="{{ item.client_item_image }}" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

@@ -1,22 +1,24 @@
-<section id="projects" class="c-projects container">
-  <div class="row center-xs">
-    <h2 class="col-xs-12 c-title fade-in projects__title">Ons werk<span class="title__icon"><img src="{{ site.theme.link }}/static/images/sparkle.svg"></span></h2>
-  </div>
-  <div class="row fade-in">
-    {% for item in project_items %}
-      <div class="col-xs-12 col-sm-4 projects__item">
-        <div class="projects__item">
-          <img class="projects__image" src="{{ item.project_image }}" />
-          <span class="projects__open-button">Bekijk project</span>
-          <div class="projects__overlay">
-            <div class="overlay__content">
-              <h3>{{ item.project_item_title }}</h3>
-              <p>{{ item.project_item_description }}</p>
+{% if post.project_active == true %}
+  <section id="projects" class="c-projects container">
+    <div class="row center-xs">
+      <h2 class="col-xs-12 c-title fade-in projects__title">{{ post.project_title }}<span class="title__icon"><img src="{{ site.theme.link }}/static/images/sparkle.svg"></span></h2>
+    </div>
+    <div class="row fade-in">
+      {% for item in project_items %}
+        <div class="col-xs-12 col-sm-4 projects__item">
+          <div class="projects__item">
+            <img class="projects__image" src="{{ item.project_image }}" />
+            <span class="projects__open-button">Bekijk project</span>
+            <div class="projects__overlay">
+              <div class="overlay__content">
+                <h3>{{ item.project_item_title }}</h3>
+                <p>{{ item.project_item_description }}</p>
+              </div>
+              {{ item.project_item_link }}
             </div>
-             {{ item.project_item_link }}
           </div>
         </div>
-      </div>
-    {% endfor %}
-  </div>
-</section>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

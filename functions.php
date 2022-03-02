@@ -91,6 +91,7 @@ class StarterSite extends Timber\Site {
     $context['hero_img'] = $cfs->get('hero_image');
     $context['procedure_items'] = $cfs->get('procedure_items');
     $context['project_items'] = $cfs->get('project_items');
+    $context['client_items'] = $cfs->get('client_items');
 		$context['site']  = $this;
 		return $context;
 	}
